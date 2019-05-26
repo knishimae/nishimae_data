@@ -54,14 +54,5 @@ plt.savefig("matplot.jpg")
 
 house.groupby("yr_built").mean()["price"].plot()
 
-fig,ax = plt.subplots(2,2,figsize=(13,8))
-sns.pointplot("bedrooms","jp_M",data=house,hue="condition",ax=ax[0,0])
-
-sns.boxplot("grade","sqft_living",data=house,ax=ax[0,1])
-
-sns.swarmplot("grade","jp_M",data=house.loc[house["grade"]>9],ax=ax[1,0])
-
-sns.violinplot(x="grade",y="bathrooms",data=house.loc[(house["grade"]>3) & (house["grade"]< 6)], hue="good/bad",split=True,ax=ax[1,1])house.groupby("sqft_living").mean()["jp_M"].iplot()
-
 house.groupby("sqft_living").mean()["jp_M"].iplot()
 
